@@ -46,7 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataProvider.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\Globals.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,8 +68,8 @@
     <Compile Include="SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Users.cs" />
-    <Compile Include="UserInfo.cs" />
+    <Compile Include="DTO\Users.cs" />
+    <Compile Include="DTO\UserInfo.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,5 +114,6 @@
   <ItemGroup>
     <None Include="Resources\8f97fa1dbc8e4ed0179f.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
