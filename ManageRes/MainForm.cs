@@ -15,6 +15,7 @@ namespace ManageRes
         public MainForm()
         {
             InitializeComponent();
+            customerDesign();
         }
         public Form activeForm = null;
         public void openchildForm(Form childForm)
@@ -29,6 +30,47 @@ namespace ManageRes
             panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+        }
+        private void showPanel(Panel menu)
+        {
+            if (menu.Visible == false)
+            {
+                hideAllPanel();
+                menu.Visible = true;
+            }
+            else
+            {
+                menu.Visible = false;
+            }
+        }
+        private void hideAllPanel()
+        {
+            if (panelBan.Visible == true)
+                panelBan.Visible = false;
+            //if (panelCourse.Visible == true)
+            //    panelCourse.Visible = false;
+            //if (panelScore.Visible == true)
+            //    panelScore.Visible = false;
+            //if (panelResult.Visible == true)
+            //    panelResult.Visible = false;
+        }
+        private void customerDesign()
+        {
+            panelBan.Visible = false;
+            //panelCourse.Visible = false;
+            //panelScore.Visible = false;
+            //panelResult.Visible = false;
+        }
+        #region Button Click
+
+
+
+
+        #endregion
+
+        private void buttonBan_Click(object sender, EventArgs e)
+        {
+            showPanel(panelBan);
         }
     }
 }
