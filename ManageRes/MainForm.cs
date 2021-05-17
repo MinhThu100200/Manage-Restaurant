@@ -45,21 +45,24 @@ namespace ManageRes
         }
         private void hideAllPanel()
         {
+            if (panelMonAn.Visible == true)
+                panelMonAn.Visible = false;
             if (panelBan.Visible == true)
                 panelBan.Visible = false;
-            //if (panelCourse.Visible == true)
-            //    panelCourse.Visible = false;
-            //if (panelScore.Visible == true)
-            //    panelScore.Visible = false;
-            //if (panelResult.Visible == true)
-            //    panelResult.Visible = false;
+            if (panelKhoHang.Visible == true)
+                panelKhoHang.Visible = false;
+            if (panelKhachHang.Visible == true)
+                panelKhachHang.Visible = false;
+            if (panelTaiKhoan.Visible == true)
+                panelTaiKhoan.Visible = false;
         }
         private void customerDesign()
         {
+            panelMonAn.Visible = false;
             panelBan.Visible = false;
-            //panelCourse.Visible = false;
-            //panelScore.Visible = false;
-            //panelResult.Visible = false;
+            panelKhachHang.Visible = false;
+            panelKhoHang.Visible = false;
+            panelTaiKhoan.Visible = false;
         }
         #region Button Click
 
@@ -71,6 +74,31 @@ namespace ManageRes
         private void buttonBan_Click(object sender, EventArgs e)
         {
             showPanel(panelBan);
+        }
+
+        private void buttonMon_Click(object sender, EventArgs e)
+        {
+            showPanel(panelMonAn);
+        }
+
+        private void buttonKhachHang_Click(object sender, EventArgs e)
+        {
+            showPanel(panelKhachHang);
+        }
+
+        private void buttonKho_Click(object sender, EventArgs e)
+        {
+            showPanel(panelKhoHang);
+        }
+
+        private void buttonTaiKhoan_Click(object sender, EventArgs e)
+        {
+            showPanel(panelTaiKhoan);
+        }
+
+        private void buttonXoa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
