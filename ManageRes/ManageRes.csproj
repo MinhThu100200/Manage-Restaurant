@@ -52,6 +52,8 @@
     <Compile Include="AboutMe.Designer.cs">
       <DependentUpon>AboutMe.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTO\Customer.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\Globals.cs" />
     <Compile Include="DAO\FoodDAO.cs" />
@@ -81,6 +83,8 @@
     <Compile Include="DAO\UsersDAO.cs" />
     <Compile Include="DTO\Table.cs" />
     <Compile Include="DAO\TableDAO.cs" />
+    <Compile Include="DTO\Warehouse.cs" />
+    <Compile Include="DAO\WarehouseDAO.cs" />
     <EmbeddedResource Include="AboutMe.resx">
       <DependentUpon>AboutMe.cs</DependentUpon>
     </EmbeddedResource>
