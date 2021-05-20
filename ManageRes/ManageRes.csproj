@@ -46,8 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutMe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutMe.Designer.cs">
+      <DependentUpon>AboutMe.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\Globals.cs" />
+    <Compile Include="DAO\FoodDAO.cs" />
+    <Compile Include="DTO\Food.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +78,12 @@
     </Compile>
     <Compile Include="DTO\Users.cs" />
     <Compile Include="DTO\UserInfo.cs" />
+    <Compile Include="DAO\UsersDAO.cs" />
+    <Compile Include="DTO\Table.cs" />
+    <Compile Include="DAO\TableDAO.cs" />
+    <EmbeddedResource Include="AboutMe.resx">
+      <DependentUpon>AboutMe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

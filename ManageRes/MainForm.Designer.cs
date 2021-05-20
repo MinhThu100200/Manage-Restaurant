@@ -67,6 +67,7 @@ namespace ManageRes
             this.panelInfo = new System.Windows.Forms.Panel();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelTaiKhoan.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -79,6 +80,7 @@ namespace ManageRes
             this.panelMonAn.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panelTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -273,6 +275,7 @@ namespace ManageRes
             this.buttonVeToi.TabIndex = 6;
             this.buttonVeToi.Text = "Me";
             this.buttonVeToi.UseVisualStyleBackColor = false;
+            this.buttonVeToi.Click += new System.EventHandler(this.buttonVeToi_Click);
             // 
             // panel19
             // 
@@ -583,6 +586,7 @@ namespace ManageRes
             // panelTitle
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(12)))));
+            this.panelTitle.Controls.Add(this.label1);
             this.panelTitle.Location = new System.Drawing.Point(198, 2);
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(1061, 100);
@@ -594,6 +598,17 @@ namespace ManageRes
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(1058, 541);
             this.panelChildForm.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(252, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(518, 58);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "QUẢN LÝ NHÀ HÀNG";
             // 
             // MainForm
             // 
@@ -618,6 +633,8 @@ namespace ManageRes
             this.panelMonAn.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panelTitle.ResumeLayout(false);
+            this.panelTitle.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -662,5 +679,6 @@ namespace ManageRes
         private System.Windows.Forms.Panel panelKhoHang;
         private System.Windows.Forms.Button buttonDangXuat;
         private System.Windows.Forms.Panel panelChildForm;
+        private System.Windows.Forms.Label label1;
     }
 }

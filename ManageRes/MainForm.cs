@@ -100,5 +100,11 @@ namespace ManageRes
         {
 
         }
+
+        private void buttonVeToi_Click(object sender, EventArgs e)
+        {
+            AboutMe frm = new AboutMe();
+            frm.ShowDialog();
+        }
     }
 }
