@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,18 +36,18 @@ namespace ManageRes
 
         private int tinhtrang;
 
-        public int Tinhtrang
+        public int TinhTrang
         {
-            get { return Tinhtrang; }
-            set { Tinhtrang = value; }
+            get { return TinhTrang; }
+            set { TinhTrang = value; }
         }
 
-        private int soluongKH;
+        private int soluongkhach;
 
-        public int SoluongKH
+        public int Soluongkhach
         {
-            get { return soluongKH; }
-            set { soluongKH = value; }
+            get { return soluongkhach; }
+            set { soluongkhach = value; }
         }
 
 
@@ -55,20 +56,24 @@ namespace ManageRes
 
         public Tables() { }
 
-        public Tables(int id, string ten, int idHoaDon)
+        public Tables(int id, string ten, int loai, int tinhtrang, int soluongKH)
         {
             this.Id = id;
             this.Ten = ten;
-            this.IdHoaDon = idHoaDon;
+            this.Loai = loai;
+            this.TinhTrang = tinhtrang;
+            this.Soluongkhach = soluongKH;
 
         }
 
 
-        public Customer(DataRow row)
+        public Tables(DataRow row)
         {
             this.Id = Convert.ToInt32(row["Id"]);
             this.Ten = row["Ten"].ToString();
-            this.IdHoaDon = Convert.ToInt32(row["IdHoaDon"]);
+            this.Loai = Convert.ToInt32(row["Loai"]);
+            this.TinhTrang = Convert.ToInt32(row["TinhTrang"]);
+            this.Soluongkhach = Convert.ToInt32(row["SoLuongKhach"]);
 
         }
     }

@@ -67,19 +67,19 @@ namespace ManageRes
 
         public List<Food> GetAllCourseList()
         {
-            List<Food> listCourse = new List<Food>();
+            List<Food> listFood = new List<Food>();
             string query = "select * from Food";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow item in data.Rows)
             {
-                Food crs = new Food(item);
-                listCourse.Add(crs);
+                Food food = new Food(item);
+                listFood.Add(food);
             }
 
 
-            return listCourse;
+            return listFood;
 
         }
     }

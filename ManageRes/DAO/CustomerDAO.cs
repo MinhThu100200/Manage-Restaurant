@@ -24,8 +24,8 @@ namespace ManageRes
 
         public bool InsertCustomer(string ten)
         {
-            string query = "INSERT INTO KhachHang( ten ,gia )"
-                + " VALUES  ( @label , @gia )";
+            string query = "INSERT INTO KhachHang( ten)"
+                + " VALUES  ( @ten)";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten}) > 0;
         }
 
@@ -55,25 +55,25 @@ namespace ManageRes
 
         public bool UpdateCustomerByID(int id, string ten, int idHoaDon)
         {
-            string query = "UPDATE KhachHang SET Ten = @ten , IdHoaDon = @gia WHERE Id = @id ";
+            string query = "UPDATE KhachHang SET Ten = @ten , IdHoaDon = @idhoadon WHERE Id = @id ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten, idHoaDon, id }) > 0;
         }
 
         public List<Customer> GetAllCustomerList()
         {
-            List<Customer> listCourse = new List<Customer>();
-            string query = "select * from Customer";
+            List<Customer> listCustomer = new List<Customer>();
+            string query = "select * from KhachHang";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow item in data.Rows)
             {
-                Customer crs = new Customer(item);
-                listCourse.Add(crs);
+                Customer customer = new Customer(item);
+                listCustomer.Add(customer);
             }
 
 
-            return listCourse;
+            return listCustomer;
 
         }
     }
