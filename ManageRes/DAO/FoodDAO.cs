@@ -25,7 +25,7 @@ namespace ManageRes
         public bool InsertFood(string ten, double gia)
         {
             string query = "INSERT INTO Mon( ten ,gia )"
-                + " VALUES  ( @label , @gia )";
+                + " VALUES  ( @ten , @gia )";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] {ten, gia}) > 0;
         }
 
@@ -68,7 +68,7 @@ namespace ManageRes
         public List<Food> GetAllCourseList()
         {
             List<Food> listCourse = new List<Food>();
-            string query = "select * from course";
+            string query = "select * from Food";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 

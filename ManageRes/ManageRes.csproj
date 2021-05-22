@@ -81,7 +81,7 @@
     <Compile Include="DTO\Users.cs" />
     <Compile Include="DTO\UserInfo.cs" />
     <Compile Include="DAO\UsersDAO.cs" />
-    <Compile Include="DTO\Table.cs" />
+    <Compile Include="DTO\Tables.cs" />
     <Compile Include="DAO\TableDAO.cs" />
     <Compile Include="DTO\Warehouse.cs" />
     <Compile Include="DAO\WarehouseDAO.cs" />

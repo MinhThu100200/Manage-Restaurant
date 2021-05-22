@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ManageRes
 {
-    class Customer
+    class Tables
     {
         #region Para
         private int id;
@@ -26,19 +25,37 @@ namespace ManageRes
             set { ten = value; }
         }
 
-        private int idHoaDon;
+        private int loai;
 
-        public int IdHoaDon
+        public int Loai
         {
-            get { return idHoaDon; }
-            set { idHoaDon = value; }
+            get { return loai; }
+            set { loai = value; }
         }
+
+        private int tinhtrang;
+
+        public int Tinhtrang
+        {
+            get { return Tinhtrang; }
+            set { Tinhtrang = value; }
+        }
+
+        private int soluongKH;
+
+        public int SoluongKH
+        {
+            get { return soluongKH; }
+            set { soluongKH = value; }
+        }
+
+
         #endregion
 
 
-        public Customer() { }
+        public Tables() { }
 
-        public Customer(int id, string ten, int idHoaDon)
+        public Tables(int id, string ten, int idHoaDon)
         {
             this.Id = id;
             this.Ten = ten;
