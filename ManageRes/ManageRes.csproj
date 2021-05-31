@@ -85,6 +85,13 @@
     <Compile Include="DAO\TableDAO.cs" />
     <Compile Include="DTO\Warehouse.cs" />
     <Compile Include="DAO\WarehouseDAO.cs" />
+    <Compile Include="UpdateInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateInfoForm.Designer.cs">
+      <DependentUpon>UpdateInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\UserInfoDAO.cs" />
     <EmbeddedResource Include="AboutMe.resx">
       <DependentUpon>AboutMe.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +113,9 @@
     </Compile>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateInfoForm.resx">
+      <DependentUpon>UpdateInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,28 +10,71 @@ namespace ManageRes
 {
     class Users
     {
-        private int Id;
-        private string Username;
-        private string Password;
+        private int id;
+
+        private int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        private string username;
+
+        private string Username
+        {
+            get { return username; }
+            set { username = value; }
+        }
+        private string password;
+
+        private string Password
+        {
+            get { return password; }
+            set { password = value; }
+        }
         private string email;
+
+        private string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+        private string phone;
+
+        private string Phone
+        {
+            get { return phone; }
+            set { phone = value; }
+        }
         private int role;
 
-        public Users()
-        { }
+        private int Role
+        {
+            get { return role; }
+            set { role = value; }
+        }
+
+        public Users() { }
+
+        public Users(int id, string username, string password, string email, string phone, int role)
+        {
+            this.Id = id;
+            this.Username = username;
+            this.Password = password;
+            this.Email = email;
+            this.Phone = phone;
+            this.Role = role;
+        }
+
 
         public Users(DataRow row)
         {
-            this.Id = (int)row["ID"];
-            this.Username = row["Username"].ToString();
-            this.Password = row["Password"].ToString();
-            this.email = row["Email"].ToString();           
-            this.role = (int)row["Role"];
-           
+            this.Id = Convert.ToInt32(row["Id"]);
+            this.Username = row["TenDangNhap"].ToString();
+            this.Password = (row["MatKhau"]).ToString();
+            this.Email =(row["Email"]).ToString();
+            this.Phone = (row["Sdt"]).ToString();
+            this.Role = Convert.ToInt32(row["VaiTro"]);
+
         }
-        public int ID { get => ID; set => ID = value; }
-        public string UserName { get => Username; set => Username = value; }
-        public string PassWord { get => Password; set => Password = value; }       
-        public string Email { get => email; set => email = value; }
-        public int Role { get => role; set => role = value; }
     }
 }
