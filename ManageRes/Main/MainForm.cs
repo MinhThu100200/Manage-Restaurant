@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -96,15 +97,73 @@ namespace ManageRes
             showPanel(panelTaiKhoan);
         }
 
-        private void buttonXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonVeToi_Click(object sender, EventArgs e)
         {
             AboutMe frm = new AboutMe();
             frm.ShowDialog();
+        }
+
+        private void buttonDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm frm = new LoginForm();
+            frm.ShowDialog();
+        }
+
+        private void buttonXoaBan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonXoaHang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDSMon_Click(object sender, EventArgs e)
+        {
+            openchildForm(new ListFoodForm());
+        }       
+        private void buttonBestSeller_Click(object sender, EventArgs e)
+        {
+            openchildForm(new BestSellerForm());
+        }
+
+        private void buttonThemBan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Globals.Users.Id;
+                byte[] pic = (byte[])UserInfoDAO.Instance.GetUserInfoByID(id).Rows[0]["HinhAnh"];
+                MemoryStream picture = new MemoryStream(pic);
+                pictureBoxImage.Image = Image.FromStream(picture);
+                if (Globals.Users.Role == 1)
+                {
+                    labelPosition.Text = "Xin chào Quản lý";
+                }
+                else
+                {
+                    labelPosition.Text = "Xin chào";
+                }
+            }
+            catch { }
+           
+            
+        }
+
+        private void buttonCRUDTable_Click(object sender, EventArgs e)
+        {
+            openchildForm(new CRUDTableForm());
+        }
+
+        private void buttonBookFood_Click(object sender, EventArgs e)
+        {
+            openchildForm(new BookFoodForm());
         }
     }
 }

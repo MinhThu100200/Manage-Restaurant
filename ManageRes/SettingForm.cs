@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ManageRes
 {
-    public partial class SignUpForm : Form
+    public partial class SettingForm : Form
     {
-        public SignUpForm()
+        public SettingForm()
         {
             InitializeComponent();
-        }
-
-        private void buttonSignUp_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

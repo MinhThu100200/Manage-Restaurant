@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ManageRes
 {
-    class Globals
+    class GlobalsTable
     {
-        public static Users Users;
+        public static Tables tables;
 
-        public static void SetGlobalUserID(int userID)
+        public static void SetGlobalTableID(int tableID)
         {
-            
+
         }
     }
 }

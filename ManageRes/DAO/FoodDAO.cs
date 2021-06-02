@@ -41,6 +41,12 @@ namespace ManageRes
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id }).Rows.Count > 0;
         }
 
+        public DataTable SearchFoodID(int id)
+        {
+            string query = "Select * from Mon where id = @id";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
+        }
+
         public bool DeleteFoodByID(int id)
         {
             string query = "delete from Mon where id = @id ";

@@ -26,7 +26,7 @@ namespace ManageRes
         public bool InsertUserInfo(int idnhanvien, string hoten, string diachi, DateTime ngaysinh, MemoryStream hinhanh)
         {
             string query = "INSERT INTO ThongTinChiTiet( IdNhanVien , HoTen, DiaChi, NgaySinh, HinhAnh)"
-                + " VALUES  ( @tendangnhap , @matkhau, @email, @sdt, @vaitro )";
+                + " VALUES  ( @idnhanvien , @hoten , @diachi , @ngaysinh , @hinhanh )";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { idnhanvien, hoten, diachi, ngaysinh, hinhanh.ToArray() }) > 0;
         }
 
@@ -45,6 +45,11 @@ namespace ManageRes
         public DataTable GetUserInfoByID(int id)
         {
             string query = "SELECT * FROM ThongTinChiTiet where id = @id ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
+        }
+        public DataTable GetUserInfoByIDUser(int id)
+        {
+            string query = "SELECT * FROM ThongTinChiTiet where IdNhanVien = @idnhanvien ";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
         }
 

@@ -21,14 +21,14 @@ namespace ManageRes
         {
 
         }
-
+        //insert
         public bool InsertUser(string tendangnhap, string matkhau, string email, string sdt, int vaitro)
         {
-            string query = "INSERT INTO NhanVien( TenDangNhap ,MatKhau, Email, Sdt, VaiTro)"
-                + " VALUES  ( @tendangnhap , @matkhau, @email, @sdt, @vaitro )";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { tendangnhap, matkhau, email, sdt, vaitro }) > 0;
+            string query = "INSERT INTO NhanVien( TenDangNhap ,MatKhau ,Email ,Sdt ,VaiTro)"
+                + " VALUES  ( @tendangnhap , @matkhau , @email , @sdt , @vaitro )";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { tendangnhap ,matkhau ,email ,sdt ,vaitro }) > 0;
         }
-
+        //delete
         public bool DeleteUserByID(int id)
         {
             string query = "delete from NhanVien where id = @id ";
@@ -69,6 +69,14 @@ namespace ManageRes
 
             return listUser;
 
+        }
+        //login
+        public DataRow Login(string username, string password, int role)
+        {
+            string query = "select * from NhanVien WHERE TenDangNhap = @username and MatKhau = @password and VaiTro = @role";
+            if (DataProvider.Instance.ExecuteQuery(query, new object[] { username, password, role }).Rows.Count == 1)
+                return DataProvider.Instance.ExecuteQuery(query, new object[] { username, password, role }).Rows[0];
+            return null;
         }
     }
 }

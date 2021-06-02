@@ -24,8 +24,8 @@ namespace ManageRes
 
         public bool InsertTable(string ten, int loai, int tinhtrang, int soluongkhach)
         {
-            string query = "INSERT INTO Ban( ten ,loai, tinhtrang, soluongkhach)"
-                + " VALUES  ( @ten , @loai, @tinhtrang, @soluongkhach )";
+            string query = "INSERT INTO Ban( ten, loai, tinhtrang, soluongkhach)"
+                + " VALUES  ( @ten , @loai , @tinhtrang , @soluongkhach )";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten, loai, tinhtrang, soluongkhach }) > 0;
         }
 
@@ -34,7 +34,11 @@ namespace ManageRes
             string query = "Select * from Ban where id = @id";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id }).Rows.Count > 0;
         }
-
+        public bool CheckTableName(string ten)
+        {
+            string query = "Select * from Ban where ten = @ten";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { ten }).Rows.Count > 0;
+        }
         public bool DeleteTableByID(int id)
         {
             string query = "delete from Ban where id = @id ";
@@ -53,10 +57,22 @@ namespace ManageRes
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
         }
 
+        public DataTable GetTableByName(string name)
+        {
+            string query = "SELECT * FROM Ban where Ten = @name ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { name });
+        }
         public bool UpdateTableByID(int id, string ten, int loai, int tinhtrang, int soluongkhach)
         {
             string query = "UPDATE Ban SET Ten = @ten , Loai = @loai, TinhTrang = @tinhtrang, SoLuongKhach = @soluongkhach WHERE Id = @id ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten, loai, tinhtrang, soluongkhach, id }) > 0;
+        }
+
+        public bool UpdateStateByID(int id)
+        {
+            int state = 0;
+            string query = "UPDATE Ban SET inhTrang = @tinhtrang WHERE Id = @id ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { state, id }) > 0;
         }
 
         public List<Tables> GetAllTableList()

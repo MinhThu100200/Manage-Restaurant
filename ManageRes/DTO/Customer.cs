@@ -33,17 +33,25 @@ namespace ManageRes
             get { return idHoaDon; }
             set { idHoaDon = value; }
         }
+
+        private string cmnd;
+
+        public string Cmnd
+        {
+            get { return cmnd; }
+            set { cmnd = value; }
+        }
         #endregion
 
 
         public Customer() { }
 
-        public Customer(int id, string ten, int idHoaDon)
+        public Customer(int id, string ten, int idHoaDon, string cmnd)
         {
             this.Id = id;
             this.Ten = ten;
             this.IdHoaDon = idHoaDon;
-
+            this.Cmnd = cmnd;
         }
 
 
@@ -52,7 +60,7 @@ namespace ManageRes
             this.Id = Convert.ToInt32(row["Id"]);
             this.Ten = row["Ten"].ToString();
             this.IdHoaDon = Convert.ToInt32(row["IdHoaDon"]);
-
+            this.Cmnd = row["Cmnd"].ToString();
         }
     }
 }

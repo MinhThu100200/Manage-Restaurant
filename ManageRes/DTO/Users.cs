@@ -12,42 +12,42 @@ namespace ManageRes
     {
         private int id;
 
-        private int Id
+        public int Id
         {
             get { return id; }
             set { id = value; }
         }
         private string username;
 
-        private string Username
+        public string Username
         {
             get { return username; }
             set { username = value; }
         }
         private string password;
 
-        private string Password
+        public string Password
         {
             get { return password; }
             set { password = value; }
         }
         private string email;
 
-        private string Email
+        public string Email
         {
             get { return email; }
             set { email = value; }
         }
         private string phone;
 
-        private string Phone
+        public string Phone
         {
             get { return phone; }
             set { phone = value; }
         }
         private int role;
 
-        private int Role
+        public int Role
         {
             get { return role; }
             set { role = value; }

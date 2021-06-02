@@ -22,17 +22,22 @@ namespace ManageRes
 
         }
 
-        public bool InsertCustomer(string ten)
+        public bool InsertCustomer(string ten, string cmnd, int idHoaDon)
         {
-            string query = "INSERT INTO KhachHang( ten)"
-                + " VALUES  ( @ten)";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten}) > 0;
+            string query = "INSERT INTO KhachHang( ten, idhoadon, cmnnd)"
+                + " VALUES  ( @ten , @idhoadon ,  @cmnd )";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten, idHoaDon, cmnd}) > 0;
         }
 
         public bool CheckCustomerID(int id)
         {
             string query = "Select * from KhachHang where id = @id";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id }).Rows.Count > 0;
+        }
+        public bool CheckCustomerCmnd(int cmnd)
+        {
+            string query = "Select * from KhachHang where Cmnd = @cmnd";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { cmnd }).Rows.Count > 0;
         }
 
         public bool DeleteCustomerByID(int id)
@@ -53,10 +58,16 @@ namespace ManageRes
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
         }
 
-        public bool UpdateCustomerByID(int id, string ten, int idHoaDon)
+        public DataTable GetCustomerByCmnd(int cmnd)
         {
-            string query = "UPDATE KhachHang SET Ten = @ten , IdHoaDon = @idhoadon WHERE Id = @id ";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten, idHoaDon, id }) > 0;
+            string query = "SELECT * FROM KhachHang where Cmnd = @cmnd ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { cmnd });
+        }
+
+        public bool UpdateCustomerByID(int id, string ten, int idHoaDon, string cmnd)
+        {
+            string query = "UPDATE KhachHang SET Ten = @ten , IdHoaDon = @idhoadon , Cmnd = @cmnd WHERE Id = @id ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten, idHoaDon, cmnd , id }) > 0;
         }
 
         public List<Customer> GetAllCustomerList()

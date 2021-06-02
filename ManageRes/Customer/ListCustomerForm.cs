@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace ManageRes
 {
-    public partial class LoginForm : Form
+    public partial class ListCustomerForm : Form
     {
-        public LoginForm()
+        public ListCustomerForm()
         {
             InitializeComponent();
-        }
-
-        private void btnSigUp_Click(object sender, EventArgs e)
-        {
-            SignUpForm frm = new SignUpForm();
-            frm.ShowDialog();
         }
     }
 }

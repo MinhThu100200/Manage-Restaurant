@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +47,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutMe.cs">
+    <Compile Include="DAO\GlobalsTable.cs" />
+    <Compile Include="Main\AboutMe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutMe.Designer.cs">
+    <Compile Include="Main\AboutMe.Designer.cs">
       <DependentUpon>AboutMe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookFoodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookFoodForm.Designer.cs">
+      <DependentUpon>BookFoodForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseFood.Designer.cs">
+      <DependentUpon>ChooseFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table\CRUDTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table\CRUDTableForm.Designer.cs">
+      <DependentUpon>CRUDTableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Food\BestSellerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Food\BestSellerForm.Designer.cs">
+      <DependentUpon>BestSellerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\Customer.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
@@ -58,24 +84,48 @@
     <Compile Include="DAO\Globals.cs" />
     <Compile Include="DAO\FoodDAO.cs" />
     <Compile Include="DTO\Food.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Food\ListFoodForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Food\ListFoodForm.Designer.cs">
+      <DependentUpon>ListFoodForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\ListCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\ListCustomerForm.Designer.cs">
+      <DependentUpon>ListCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Main\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SignUpForm.cs">
+    <Compile Include="SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignUpForm.Designer.cs">
+    <Compile Include="SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\Users.cs" />
@@ -85,21 +135,40 @@
     <Compile Include="DAO\TableDAO.cs" />
     <Compile Include="DTO\Warehouse.cs" />
     <Compile Include="DAO\WarehouseDAO.cs" />
-    <Compile Include="UpdateInfoForm.cs">
+    <Compile Include="DAO\TypeTableDAO.cs" />
+    <Compile Include="Main\UpdateInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateInfoForm.Designer.cs">
+    <Compile Include="Main\UpdateInfoForm.Designer.cs">
       <DependentUpon>UpdateInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\UserInfoDAO.cs" />
-    <EmbeddedResource Include="AboutMe.resx">
+    <EmbeddedResource Include="Main\AboutMe.resx">
       <DependentUpon>AboutMe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="BookFoodForm.resx">
+      <DependentUpon>BookFoodForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseFood.resx">
+      <DependentUpon>ChooseFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table\CRUDTableForm.resx">
+      <DependentUpon>CRUDTableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Food\BestSellerForm.resx">
+      <DependentUpon>BestSellerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Food\ListFoodForm.resx">
+      <DependentUpon>ListFoodForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,10 +180,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SignUpForm.resx">
+    <EmbeddedResource Include="Main\SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateInfoForm.resx">
+    <EmbeddedResource Include="Main\UpdateInfoForm.resx">
       <DependentUpon>UpdateInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

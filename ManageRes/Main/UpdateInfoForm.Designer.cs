@@ -135,6 +135,7 @@ namespace ManageRes
             // 
             // pictureBoxImage
             // 
+            this.pictureBoxImage.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pictureBoxImage.Location = new System.Drawing.Point(207, 311);
             this.pictureBoxImage.Name = "pictureBoxImage";
             this.pictureBoxImage.Size = new System.Drawing.Size(322, 199);
@@ -153,6 +154,7 @@ namespace ManageRes
             this.buttonUploadImage.TabIndex = 11;
             this.buttonUploadImage.Text = "Upload";
             this.buttonUploadImage.UseVisualStyleBackColor = false;
+            this.buttonUploadImage.Click += new System.EventHandler(this.buttonUploadImage_Click);
             // 
             // buttonCancel
             // 
@@ -165,6 +167,7 @@ namespace ManageRes
             this.buttonCancel.TabIndex = 12;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonUpdate
             // 
@@ -177,6 +180,7 @@ namespace ManageRes
             this.buttonUpdate.TabIndex = 13;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // UpdateInfoForm
             // 

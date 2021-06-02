@@ -51,7 +51,7 @@ namespace ManageRes
         {
             this.Id = Convert.ToInt32(row["Id"]);
             this.Ten = row["Ten"].ToString();
-            this.Gia = (double) Convert.ToInt32(row["Gia"]);
+            this.Gia = Convert.ToDouble(row["Gia"]);
 
         }
     }

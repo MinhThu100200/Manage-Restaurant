@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ManageRes
 {
-    public partial class AboutMe : Form
+    public partial class BestSellerForm : Form
     {
-        public AboutMe()
+        public BestSellerForm()
         {
             InitializeComponent();
         }

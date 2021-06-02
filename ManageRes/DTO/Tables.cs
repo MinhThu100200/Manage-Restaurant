@@ -38,8 +38,8 @@ namespace ManageRes
 
         public int TinhTrang
         {
-            get { return TinhTrang; }
-            set { TinhTrang = value; }
+            get { return tinhtrang; }
+            set { tinhtrang = value; }
         }
 
         private int soluongkhach;
