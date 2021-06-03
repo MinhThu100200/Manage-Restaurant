@@ -28,6 +28,17 @@ namespace ManageRes
                 + " VALUES  ( @ten , @soluongkhach )";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten, soluong }) > 0;
         }
+        public bool CheckFoodName(string ten)
+        {
+            string query = "Select * from Kho where ten = @ten";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { ten }).Rows.Count > 0;
+        }
+
+        public bool CheckFoodID(int id)
+        {
+            string query = "Select * from Kho where id = @id";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id }).Rows.Count > 0;
+        }
 
         public bool DeleteWarehouseByID(int id)
         {
@@ -51,6 +62,12 @@ namespace ManageRes
         {
             string query = "UPDATE Kho SET Ten = @ten , SoLuong = @soluong WHERE Id = @id ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten, soluong, id }) > 0;
+        }
+
+        public bool UpdateWarehouseOrder(string ten, int soluong)
+        {
+            string query = "UPDATE Kho SET SoLuong = @soluong WHERE Ten = @ten ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { soluong, ten}) > 0;
         }
 
         public List<Warehouse> GetAllTableList()

@@ -22,11 +22,11 @@ namespace ManageRes
 
         }
 
-        public bool InsertCustomer(string ten, string cmnd, int idHoaDon)
+        public bool InsertCustomer(string ten, string cmnd)
         {
-            string query = "INSERT INTO KhachHang( ten, idhoadon, cmnnd)"
-                + " VALUES  ( @ten , @idhoadon ,  @cmnd )";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten, idHoaDon, cmnd}) > 0;
+            string query = "INSERT INTO KhachHang( ten, cmnd)"
+                + " VALUES  ( @ten ,  @cmnd )";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten, cmnd}) > 0;
         }
 
         public bool CheckCustomerID(int id)
@@ -34,7 +34,7 @@ namespace ManageRes
             string query = "Select * from KhachHang where id = @id";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id }).Rows.Count > 0;
         }
-        public bool CheckCustomerCmnd(int cmnd)
+        public bool CheckCustomerCmnd(string cmnd)
         {
             string query = "Select * from KhachHang where Cmnd = @cmnd";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { cmnd }).Rows.Count > 0;
@@ -58,7 +58,7 @@ namespace ManageRes
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
         }
 
-        public DataTable GetCustomerByCmnd(int cmnd)
+        public DataTable GetCustomerByCmnd(string cmnd)
         {
             string query = "SELECT * FROM KhachHang where Cmnd = @cmnd ";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { cmnd });

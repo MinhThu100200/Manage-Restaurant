@@ -55,7 +55,7 @@ namespace ManageRes
 
         public bool UpdateUserInfoByID(int id, int idnhanvien, string hoten, string diachi, DateTime ngaysinh, MemoryStream hinhanh)
         {
-            string query = "UPDATE ThongTinChiTiet SET IdNhanVien = @idnhanvien , HoTen = @hoten, DiaChi = @diachi, NgaySinh = @ngaysinh, HinhAnh = @hinhanh WHERE Id = @id ";
+            string query = "UPDATE ThongTinChiTiet SET IdNhanVien = @idnhanvien , HoTen = @hoten , DiaChi = @diachi , NgaySinh = @ngaysinh , HinhAnh = @hinhanh WHERE Id = @id ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { idnhanvien, hoten, diachi, ngaysinh, hinhanh.ToArray(), id }) > 0;
         }
 

@@ -68,9 +68,9 @@ namespace ManageRes
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten, loai, tinhtrang, soluongkhach, id }) > 0;
         }
 
-        public bool UpdateStateByID(int id)
+        public bool UpdateStateByID(int id, int state)
         {
-            int state = 0;
+            
             string query = "UPDATE Ban SET TinhTrang = @tinhtrang WHERE Id = @id ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { state, id }) > 0;
         }

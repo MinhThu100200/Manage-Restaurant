@@ -190,14 +190,14 @@ namespace ManageRes
                 if(result == DialogResult.Yes)
                 {
                     int id = GlobalsTable.tables.Id;
-                    if(TableDAO.Instance.UpdateStateByID(id))
+                    if(TableDAO.Instance.UpdateStateByID(id, 0))
                     {
                         btn.BackColor = Color.Green;
                     }    
                 }  
                 else
                 {
-                    OptionServiceTableForm frm = new OptionServiceTableForm();
+                    ChooseFood frm = new ChooseFood();
                     frm.ShowDialog();
                 }    
             }

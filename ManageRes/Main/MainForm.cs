@@ -110,11 +110,6 @@ namespace ManageRes
             frm.ShowDialog();
         }
 
-        private void buttonXoaBan_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonXoaHang_Click(object sender, EventArgs e)
         {
 
@@ -169,6 +164,21 @@ namespace ManageRes
         private void buttonBookFood_Click(object sender, EventArgs e)
         {
             openchildForm(new BookFoodForm());
+        }
+
+        private void buttonListFood_Click(object sender, EventArgs e)
+        {
+            openchildForm(new WareHouseForm());
+        }
+
+        private void buttonDanhSachKhach_Click(object sender, EventArgs e)
+        {
+            openchildForm(new ListCustomerForm());
+        }
+
+        private void buttonListBill_Click(object sender, EventArgs e)
+        {
+            openchildForm(new ListBillForm());
         }
     }
 }

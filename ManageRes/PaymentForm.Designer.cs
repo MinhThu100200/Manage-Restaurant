@@ -135,6 +135,7 @@ namespace ManageRes
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PaymentForm";
             this.Text = "PaymentForm";
+            this.Load += new System.EventHandler(this.PaymentForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

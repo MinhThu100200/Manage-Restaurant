@@ -45,9 +45,6 @@ namespace ManageRes
             string query = "SELECT * FROM GiaLoai where id = @id ";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
         }
-
-       
-
        
     }
 }

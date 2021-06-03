@@ -228,6 +228,7 @@ namespace ManageRes
             this.buttonPayment.TabIndex = 19;
             this.buttonPayment.Text = "Payment";
             this.buttonPayment.UseVisualStyleBackColor = false;
+            this.buttonPayment.Click += new System.EventHandler(this.buttonPayment_Click);
             // 
             // buttonOrder
             // 

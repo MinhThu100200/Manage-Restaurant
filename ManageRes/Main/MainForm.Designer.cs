@@ -111,7 +111,7 @@ namespace ManageRes
             this.panelTaiKhoan.Controls.Add(this.buttonCheckIn);
             this.panelTaiKhoan.Controls.Add(this.buttonSetting);
             this.panelTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTaiKhoan.Location = new System.Drawing.Point(0, 666);
+            this.panelTaiKhoan.Location = new System.Drawing.Point(0, 660);
             this.panelTaiKhoan.Name = "panelTaiKhoan";
             this.panelTaiKhoan.Size = new System.Drawing.Size(174, 115);
             this.panelTaiKhoan.TabIndex = 10;
@@ -166,7 +166,7 @@ namespace ManageRes
             // 
             this.panel10.Controls.Add(this.buttonTaiKhoan);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 629);
+            this.panel10.Location = new System.Drawing.Point(0, 623);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(174, 37);
             this.panel10.TabIndex = 11;
@@ -194,7 +194,7 @@ namespace ManageRes
             this.panelKhoHang.Controls.Add(this.buttonListBill);
             this.panelKhoHang.Controls.Add(this.buttonListFood);
             this.panelKhoHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelKhoHang.Location = new System.Drawing.Point(0, 511);
+            this.panelKhoHang.Location = new System.Drawing.Point(0, 505);
             this.panelKhoHang.Name = "panelKhoHang";
             this.panelKhoHang.Size = new System.Drawing.Size(174, 118);
             this.panelKhoHang.TabIndex = 10;
@@ -229,6 +229,7 @@ namespace ManageRes
             this.buttonListBill.TabIndex = 6;
             this.buttonListBill.Text = "Danh Sách Hóa Đơn";
             this.buttonListBill.UseVisualStyleBackColor = false;
+            this.buttonListBill.Click += new System.EventHandler(this.buttonListBill_Click);
             // 
             // buttonListFood
             // 
@@ -244,6 +245,7 @@ namespace ManageRes
             this.buttonListFood.TabIndex = 7;
             this.buttonListFood.Text = "Danh Sách Hàng Tồn";
             this.buttonListFood.UseVisualStyleBackColor = false;
+            this.buttonListFood.Click += new System.EventHandler(this.buttonListFood_Click);
             // 
             // buttonVeToi
             // 
@@ -253,7 +255,7 @@ namespace ManageRes
             this.buttonVeToi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVeToi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVeToi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonVeToi.Location = new System.Drawing.Point(0, 781);
+            this.buttonVeToi.Location = new System.Drawing.Point(0, 775);
             this.buttonVeToi.Name = "buttonVeToi";
             this.buttonVeToi.Size = new System.Drawing.Size(174, 37);
             this.buttonVeToi.TabIndex = 6;
@@ -265,7 +267,7 @@ namespace ManageRes
             // 
             this.panel19.Controls.Add(this.buttonKho);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel19.Location = new System.Drawing.Point(0, 474);
+            this.panel19.Location = new System.Drawing.Point(0, 468);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(174, 37);
             this.panel19.TabIndex = 1;
@@ -291,7 +293,7 @@ namespace ManageRes
             // 
             this.panelKhachHang.Controls.Add(this.buttonDanhSachKhach);
             this.panelKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelKhachHang.Location = new System.Drawing.Point(0, 433);
+            this.panelKhachHang.Location = new System.Drawing.Point(0, 427);
             this.panelKhachHang.Name = "panelKhachHang";
             this.panelKhachHang.Size = new System.Drawing.Size(174, 41);
             this.panelKhachHang.TabIndex = 2;
@@ -310,12 +312,13 @@ namespace ManageRes
             this.buttonDanhSachKhach.TabIndex = 5;
             this.buttonDanhSachKhach.Text = "Danh Sách KH";
             this.buttonDanhSachKhach.UseVisualStyleBackColor = false;
+            this.buttonDanhSachKhach.Click += new System.EventHandler(this.buttonDanhSachKhach_Click);
             // 
             // panel12
             // 
             this.panel12.Controls.Add(this.buttonKhachHang);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(0, 396);
+            this.panel12.Location = new System.Drawing.Point(0, 390);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(174, 37);
             this.panel12.TabIndex = 1;
@@ -341,7 +344,7 @@ namespace ManageRes
             // 
             this.panelBan.Controls.Add(this.buttonCRUDTable);
             this.panelBan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBan.Location = new System.Drawing.Point(0, 357);
+            this.panelBan.Location = new System.Drawing.Point(0, 351);
             this.panelBan.Name = "panelBan";
             this.panelBan.Size = new System.Drawing.Size(174, 39);
             this.panelBan.TabIndex = 3;
@@ -366,7 +369,7 @@ namespace ManageRes
             // 
             this.panel2.Controls.Add(this.buttonBan);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 320);
+            this.panel2.Location = new System.Drawing.Point(0, 314);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(174, 37);
             this.panel2.TabIndex = 4;
@@ -395,7 +398,7 @@ namespace ManageRes
             this.panelMonAn.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMonAn.Location = new System.Drawing.Point(0, 237);
             this.panelMonAn.Name = "panelMonAn";
-            this.panelMonAn.Size = new System.Drawing.Size(174, 83);
+            this.panelMonAn.Size = new System.Drawing.Size(174, 77);
             this.panelMonAn.TabIndex = 3;
             // 
             // buttonBestSeller

@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace ManageRes
 {
-    public partial class BestSellerForm : Form
+    public partial class ListBillForm : Form
     {
-        public BestSellerForm()
+        public ListBillForm()
         {
             InitializeComponent();
-        }
-
-        private void comboBoxTime_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BestSellerForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

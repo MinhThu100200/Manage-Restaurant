@@ -58,6 +58,12 @@
       <DependentUpon>CheckStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\GlobalsTable.cs" />
+    <Compile Include="ListBillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListBillForm.Designer.cs">
+      <DependentUpon>ListBillForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\AboutMe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </Compile>
     <EmbeddedResource Include="Customer\ListCustomerForm.resx">
       <DependentUpon>ListCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListBillForm.resx">
+      <DependentUpon>ListBillForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\AboutMe.resx">
       <DependentUpon>AboutMe.cs</DependentUpon>

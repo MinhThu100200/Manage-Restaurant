@@ -60,6 +60,7 @@ namespace ManageRes
             this.buttonAddFood.TabIndex = 9;
             this.buttonAddFood.Text = "Add";
             this.buttonAddFood.UseVisualStyleBackColor = false;
+            this.buttonAddFood.Click += new System.EventHandler(this.buttonAddFood_Click);
             // 
             // buttonSearchFood
             // 
@@ -71,6 +72,7 @@ namespace ManageRes
             this.buttonSearchFood.TabIndex = 2;
             this.buttonSearchFood.Text = "Search";
             this.buttonSearchFood.UseVisualStyleBackColor = false;
+            this.buttonSearchFood.Click += new System.EventHandler(this.buttonSearchFood_Click);
             // 
             // textBoxSearch
             // 
@@ -120,6 +122,7 @@ namespace ManageRes
             this.buttonEditFood.TabIndex = 10;
             this.buttonEditFood.Text = "Edit";
             this.buttonEditFood.UseVisualStyleBackColor = false;
+            this.buttonEditFood.Click += new System.EventHandler(this.buttonEditFood_Click);
             // 
             // label4
             // 
@@ -142,6 +145,7 @@ namespace ManageRes
             this.buttonRefresh.TabIndex = 14;
             this.buttonRefresh.Text = "Refresh";
             this.buttonRefresh.UseVisualStyleBackColor = false;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // groupBox2
             // 
@@ -222,6 +226,7 @@ namespace ManageRes
             this.Controls.Add(this.label1);
             this.Name = "WareHouseForm";
             this.Text = "WareHouseForm";
+            this.Load += new System.EventHandler(this.WareHouseForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
