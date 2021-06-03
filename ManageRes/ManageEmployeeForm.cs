@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ManageRes
 {
-    public partial class PaymentForm : Form
+    public partial class ManageEmployeeForm : Form
     {
-        public PaymentForm()
+        public ManageEmployeeForm()
         {
             InitializeComponent();
         }

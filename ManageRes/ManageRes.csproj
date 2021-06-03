@@ -47,6 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillDAO.cs" />
+    <Compile Include="BillDetailDAO.cs" />
+    <Compile Include="CheckInDAO.cs" />
+    <Compile Include="CheckOutDAO.cs" />
+    <Compile Include="CheckStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckStaff.Designer.cs">
+      <DependentUpon>CheckStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\GlobalsTable.cs" />
     <Compile Include="Main\AboutMe.cs">
       <SubType>Form</SubType>
@@ -66,6 +76,13 @@
     <Compile Include="ChooseFood.Designer.cs">
       <DependentUpon>ChooseFood.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageEmployeeForm.Designer.cs">
+      <DependentUpon>ManageEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\SalaryDAO.cs" />
     <Compile Include="Table\CRUDTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,10 +125,10 @@
     <Compile Include="Main\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\PaymentForm.cs">
+    <Compile Include="PaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\PaymentForm.Designer.cs">
+    <Compile Include="PaymentForm.Designer.cs">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -143,6 +160,15 @@
       <DependentUpon>UpdateInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\UserInfoDAO.cs" />
+    <Compile Include="WareHouseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WareHouseForm.Designer.cs">
+      <DependentUpon>WareHouseForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Customer\ListCustomerForm.resx">
+      <DependentUpon>ListCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\AboutMe.resx">
       <DependentUpon>AboutMe.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,7 +193,7 @@
     <EmbeddedResource Include="Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\PaymentForm.resx">
+    <EmbeddedResource Include="PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -185,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\UpdateInfoForm.resx">
       <DependentUpon>UpdateInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WareHouseForm.resx">
+      <DependentUpon>WareHouseForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

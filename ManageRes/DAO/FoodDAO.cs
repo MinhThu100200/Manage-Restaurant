@@ -24,9 +24,10 @@ namespace ManageRes
 
         public bool InsertFood(string ten, double gia)
         {
-            string query = "INSERT INTO Mon( ten ,gia )"
-                + " VALUES  ( @ten , @gia )";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] {ten, gia}) > 0;
+            int trangthai = 1;
+            string query = "INSERT INTO Mon( ten ,gia ,trangthai )"
+                + " VALUES  ( @ten , @gia , @trangthai)";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] {ten, gia, trangthai}) > 0;
         }
 
         public bool CheckFoodName(string ten)
@@ -56,6 +57,12 @@ namespace ManageRes
         public DataTable GetAllFood()
         {
             string query = "SELECT * FROM Mon ";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable GetAllFoodExist()
+        {
+            string query = "SELECT * FROM Mon, Kho where Mon.Ten = Kho.Ten and Kho.SoLuong >= 3 ";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 

@@ -1,7 +1,7 @@
 ﻿
 namespace ManageRes
 {
-    partial class PaymentForm
+    partial class ManageEmployeeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,10 @@ namespace ManageRes
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // PaymentForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ClientSize = new System.Drawing.Size(1058, 541);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PaymentForm";
-            this.Text = "PaymentForm";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "ManageEmployeeForm";
         }
 
         #endregion

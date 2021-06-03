@@ -46,7 +46,6 @@ namespace ManageRes
             this.buttonKho = new System.Windows.Forms.Button();
             this.panelKhachHang = new System.Windows.Forms.Panel();
             this.buttonDanhSachKhach = new System.Windows.Forms.Button();
-            this.buttonThanhToan = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.buttonKhachHang = new System.Windows.Forms.Button();
             this.panelBan = new System.Windows.Forms.Panel();
@@ -62,10 +61,10 @@ namespace ManageRes
             this.buttonBookFood = new System.Windows.Forms.Button();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.labelPosition = new System.Windows.Forms.Label();
-            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelTaiKhoan.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -79,8 +78,8 @@ namespace ManageRes
             this.panel9.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.panelTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -112,7 +111,7 @@ namespace ManageRes
             this.panelTaiKhoan.Controls.Add(this.buttonCheckIn);
             this.panelTaiKhoan.Controls.Add(this.buttonSetting);
             this.panelTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTaiKhoan.Location = new System.Drawing.Point(0, 705);
+            this.panelTaiKhoan.Location = new System.Drawing.Point(0, 666);
             this.panelTaiKhoan.Name = "panelTaiKhoan";
             this.panelTaiKhoan.Size = new System.Drawing.Size(174, 115);
             this.panelTaiKhoan.TabIndex = 10;
@@ -167,7 +166,7 @@ namespace ManageRes
             // 
             this.panel10.Controls.Add(this.buttonTaiKhoan);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 668);
+            this.panel10.Location = new System.Drawing.Point(0, 629);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(174, 37);
             this.panel10.TabIndex = 11;
@@ -195,7 +194,7 @@ namespace ManageRes
             this.panelKhoHang.Controls.Add(this.buttonListBill);
             this.panelKhoHang.Controls.Add(this.buttonListFood);
             this.panelKhoHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelKhoHang.Location = new System.Drawing.Point(0, 550);
+            this.panelKhoHang.Location = new System.Drawing.Point(0, 511);
             this.panelKhoHang.Name = "panelKhoHang";
             this.panelKhoHang.Size = new System.Drawing.Size(174, 118);
             this.panelKhoHang.TabIndex = 10;
@@ -254,7 +253,7 @@ namespace ManageRes
             this.buttonVeToi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVeToi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVeToi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonVeToi.Location = new System.Drawing.Point(0, 820);
+            this.buttonVeToi.Location = new System.Drawing.Point(0, 781);
             this.buttonVeToi.Name = "buttonVeToi";
             this.buttonVeToi.Size = new System.Drawing.Size(174, 37);
             this.buttonVeToi.TabIndex = 6;
@@ -266,11 +265,10 @@ namespace ManageRes
             // 
             this.panel19.Controls.Add(this.buttonKho);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel19.Location = new System.Drawing.Point(0, 513);
+            this.panel19.Location = new System.Drawing.Point(0, 474);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(174, 37);
             this.panel19.TabIndex = 1;
-            this.panel19.Visible = false;
             // 
             // buttonKho
             // 
@@ -292,11 +290,10 @@ namespace ManageRes
             // panelKhachHang
             // 
             this.panelKhachHang.Controls.Add(this.buttonDanhSachKhach);
-            this.panelKhachHang.Controls.Add(this.buttonThanhToan);
             this.panelKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelKhachHang.Location = new System.Drawing.Point(0, 433);
             this.panelKhachHang.Name = "panelKhachHang";
-            this.panelKhachHang.Size = new System.Drawing.Size(174, 80);
+            this.panelKhachHang.Size = new System.Drawing.Size(174, 41);
             this.panelKhachHang.TabIndex = 2;
             // 
             // buttonDanhSachKhach
@@ -307,27 +304,12 @@ namespace ManageRes
             this.buttonDanhSachKhach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDanhSachKhach.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDanhSachKhach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonDanhSachKhach.Location = new System.Drawing.Point(0, 37);
+            this.buttonDanhSachKhach.Location = new System.Drawing.Point(0, 0);
             this.buttonDanhSachKhach.Name = "buttonDanhSachKhach";
             this.buttonDanhSachKhach.Size = new System.Drawing.Size(174, 37);
             this.buttonDanhSachKhach.TabIndex = 5;
             this.buttonDanhSachKhach.Text = "Danh Sách KH";
             this.buttonDanhSachKhach.UseVisualStyleBackColor = false;
-            // 
-            // buttonThanhToan
-            // 
-            this.buttonThanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.buttonThanhToan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonThanhToan.FlatAppearance.BorderSize = 0;
-            this.buttonThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThanhToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonThanhToan.Location = new System.Drawing.Point(0, 0);
-            this.buttonThanhToan.Name = "buttonThanhToan";
-            this.buttonThanhToan.Size = new System.Drawing.Size(174, 37);
-            this.buttonThanhToan.TabIndex = 5;
-            this.buttonThanhToan.Text = "Thanh Toán";
-            this.buttonThanhToan.UseVisualStyleBackColor = false;
             // 
             // panel12
             // 
@@ -521,15 +503,6 @@ namespace ManageRes
             this.labelPosition.TabIndex = 1;
             this.labelPosition.Text = "Hello Quản lý";
             // 
-            // pictureBoxImage
-            // 
-            this.pictureBoxImage.Location = new System.Drawing.Point(3, 2);
-            this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(168, 103);
-            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxImage.TabIndex = 0;
-            this.pictureBoxImage.TabStop = false;
-            // 
             // panelTitle
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(12)))));
@@ -558,6 +531,15 @@ namespace ManageRes
             this.panelChildForm.Size = new System.Drawing.Size(1058, 541);
             this.panelChildForm.TabIndex = 2;
             // 
+            // pictureBoxImage
+            // 
+            this.pictureBoxImage.Location = new System.Drawing.Point(3, 2);
+            this.pictureBoxImage.Name = "pictureBoxImage";
+            this.pictureBoxImage.Size = new System.Drawing.Size(168, 103);
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxImage.TabIndex = 0;
+            this.pictureBoxImage.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -584,9 +566,9 @@ namespace ManageRes
             this.panel4.ResumeLayout(false);
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -603,7 +585,6 @@ namespace ManageRes
         private System.Windows.Forms.Button buttonBestSeller;
         private System.Windows.Forms.Button buttonKhachHang;
         private System.Windows.Forms.Button buttonKho;
-        private System.Windows.Forms.Button buttonThanhToan;
         private System.Windows.Forms.Button buttonDanhSachKhach;
         private System.Windows.Forms.Button buttonVeToi;
         private System.Windows.Forms.Button buttonSetting;

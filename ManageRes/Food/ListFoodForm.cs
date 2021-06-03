@@ -22,8 +22,10 @@ namespace ManageRes
             dataGridViewListFood.AllowUserToAddRows = false;
             dataGridViewListFood.ReadOnly = true;
             dataGridViewListFood.RowTemplate.Height = 80;
-            dataGridViewListFood.DataSource = FoodDAO.Instance.GetAllFood();
-
+            DataTable dt = FoodDAO.Instance.GetAllFood();
+            dataGridViewListFood.DataSource = dt;
+            dataGridViewListFood.Columns[0].Width = 73;
+            dataGridViewListFood.Columns[3].Width = 73;
         }
 
         private void buttonAddFood_Click(object sender, EventArgs e)

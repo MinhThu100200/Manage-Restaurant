@@ -71,7 +71,7 @@ namespace ManageRes
         public bool UpdateStateByID(int id)
         {
             int state = 0;
-            string query = "UPDATE Ban SET inhTrang = @tinhtrang WHERE Id = @id ";
+            string query = "UPDATE Ban SET TinhTrang = @tinhtrang WHERE Id = @id ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { state, id }) > 0;
         }
 

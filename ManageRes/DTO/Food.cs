@@ -33,17 +33,25 @@ namespace ManageRes
             get { return gia; }
             set { gia = value; }
         }
+
+        private int trangthai;
+
+        public int TrangThai
+        {
+            get { return trangthai; }
+            set { trangthai = value; }
+        }
         #endregion
 
 
         public Food() { }
 
-        public Food(int id, string ten, double gia)
+        public Food(int id, string ten, double gia, int trangthai)
         {
             this.Id = id;
             this.Ten = ten;
             this.Gia = gia;
-           
+            this.trangthai = trangthai;
         }
 
 
@@ -52,7 +60,7 @@ namespace ManageRes
             this.Id = Convert.ToInt32(row["Id"]);
             this.Ten = row["Ten"].ToString();
             this.Gia = Convert.ToDouble(row["Gia"]);
-
+            this.trangthai = Convert.ToInt32(row["TrangThai"]);
         }
     }
 }

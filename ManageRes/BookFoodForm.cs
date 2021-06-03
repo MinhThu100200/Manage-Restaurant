@@ -100,80 +100,80 @@ namespace ManageRes
 
         private void buttonVIP1_Click(object sender, EventArgs e)
         {
-            tableType("VIP1");
+            tableType("VIP1", buttonVIP2);
         }
 
         private void buttonVIP3_Click(object sender, EventArgs e)
         {
-            tableType("VIP3");
+            tableType("VIP3", buttonVIP3);
         }
 
         private void buttonVIP5_Click(object sender, EventArgs e)
         {
-            tableType("VIP5");
+            tableType("VIP5", buttonVIP5);
         }
 
         private void buttonVIP6_Click(object sender, EventArgs e)
         {
-            tableType("VIP6");
+            tableType("VIP6", buttonVIP6);
         }
 
         private void buttonVIP4_Click(object sender, EventArgs e)
         {
-            tableType("VIP4");
+            tableType("VIP4", buttonVIP4);
         }
 
         private void buttonVIP2_Click(object sender, EventArgs e)
         {
-            tableType("VIP2");
+            tableType("VIP2", buttonVIP2);
         }
 
         private void buttonNormal1_Click(object sender, EventArgs e)
         {
-            tableType("Normal1");
+            tableType("Normal1", buttonNormal1);
         }
 
         private void buttonNormal2_Click(object sender, EventArgs e)
         {
-            tableType("Normal2");
+            tableType("Normal2", buttonNormal2);
         }
 
         private void buttonNormal3_Click(object sender, EventArgs e)
         {
-            tableType("Normal3");
+            tableType("Normal3", buttonNormal3);
         }
 
         private void buttonNormal6_Click(object sender, EventArgs e)
         {
-            tableType("Normal6");
+            tableType("Normal6", buttonNormal6);
         }
 
         private void buttonNormal5_Click(object sender, EventArgs e)
         {
-            tableType("Normal5");
+            tableType("Normal5", buttonNormal5);
         }
 
         private void buttonNormal4_Click(object sender, EventArgs e)
         {
-            tableType("Normal4");
+            tableType("Normal4", buttonNormal4);
         }
 
         private void buttonNormal7_Click(object sender, EventArgs e)
         {
-            tableType("Normal7");
+            tableType("Normal7", buttonNormal7);
         }
 
         private void buttonNormal8_Click(object sender, EventArgs e)
         {
-            tableType("Normal8");
+            tableType("Normal8", buttonNormal8);
         }
 
         private void buttonNormal9_Click(object sender, EventArgs e)
         {
-            tableType("Normal9");
+            tableType("Normal9", buttonNormal9);
         }
 
-        public void tableType(string nameTable)
+        public void tableType(string nameTable, Button btn)
         {
             DataTable dt = TableDAO.Instance.GetTableByName(nameTable);
             Tables tables = new Tables(dt.Rows[0]);
@@ -183,10 +183,28 @@ namespace ManageRes
                 ChooseFood frm = new ChooseFood();
                 frm.ShowDialog();
             }    
+            else if(GlobalsTable.tables.TinhTrang == 1)
+            {
+               
+                var result = MessageBox.Show("Empty?", "Infomation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(result == DialogResult.Yes)
+                {
+                    int id = GlobalsTable.tables.Id;
+                    if(TableDAO.Instance.UpdateStateByID(id))
+                    {
+                        btn.BackColor = Color.Green;
+                    }    
+                }  
+                else
+                {
+                    OptionServiceTableForm frm = new OptionServiceTableForm();
+                    frm.ShowDialog();
+                }    
+            }
             else
             {
-                MessageBox.Show("Table is booked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+                MessageBox.Show("Table is under constructor", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
             
         }
     }

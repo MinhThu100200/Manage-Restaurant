@@ -139,9 +139,13 @@ namespace ManageRes
             try
             {
                 int id = Globals.Users.Id;
-                byte[] pic = (byte[])UserInfoDAO.Instance.GetUserInfoByID(id).Rows[0]["HinhAnh"];
-                MemoryStream picture = new MemoryStream(pic);
-                pictureBoxImage.Image = Image.FromStream(picture);
+                if (UserInfoDAO.Instance.GetUserInfoByID(id).Rows[0]["HinhAnh"] != null)
+                {
+                    byte[] pic = (byte[])UserInfoDAO.Instance.GetUserInfoByID(id).Rows[0]["HinhAnh"];
+                    MemoryStream picture = new MemoryStream(pic);
+                    pictureBoxImage.Image = Image.FromStream(picture);
+                    
+                }
                 if (Globals.Users.Role == 1)
                 {
                     labelPosition.Text = "Xin chào Quản lý";
@@ -150,6 +154,7 @@ namespace ManageRes
                 {
                     labelPosition.Text = "Xin chào";
                 }
+
             }
             catch { }
            
