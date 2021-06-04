@@ -66,6 +66,7 @@ namespace ManageRes
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(293, 26);
             this.dateTimePickerTo.TabIndex = 17;
+            this.dateTimePickerTo.ValueChanged += new System.EventHandler(this.dateTimePickerTo_ValueChanged);
             // 
             // dateTimePickerForm
             // 
@@ -74,6 +75,7 @@ namespace ManageRes
             this.dateTimePickerForm.Name = "dateTimePickerForm";
             this.dateTimePickerForm.Size = new System.Drawing.Size(293, 26);
             this.dateTimePickerForm.TabIndex = 18;
+            this.dateTimePickerForm.ValueChanged += new System.EventHandler(this.dateTimePickerForm_ValueChanged);
             // 
             // label2
             // 
@@ -111,6 +113,7 @@ namespace ManageRes
             this.Controls.Add(this.dataGridViewListBill);
             this.Name = "ListBillForm";
             this.Text = "ListBillForm";
+            this.Load += new System.EventHandler(this.ListBillForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListBill)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -40,7 +40,7 @@ namespace ManageRes
             this.label4 = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelFood = new System.Windows.Forms.Label();
             this.labelAmountMoney = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxPriceTable = new System.Windows.Forms.TextBox();
@@ -164,21 +164,21 @@ namespace ManageRes
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.labelFood);
             this.panel1.Controls.Add(this.labelAmountMoney);
             this.panel1.Location = new System.Drawing.Point(511, 425);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(535, 100);
             this.panel1.TabIndex = 17;
             // 
-            // label6
+            // labelFood
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(329, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(203, 25);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Food: 0";
+            this.labelFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFood.Location = new System.Drawing.Point(329, 10);
+            this.labelFood.Name = "labelFood";
+            this.labelFood.Size = new System.Drawing.Size(203, 25);
+            this.labelFood.TabIndex = 1;
+            this.labelFood.Text = "Food: 0";
             // 
             // labelAmountMoney
             // 
@@ -308,13 +308,13 @@ namespace ManageRes
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelAmountMoney;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBoxPriceTable;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonPayment;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelFood;
         private System.Windows.Forms.Button buttonOrder;
         public System.Windows.Forms.DataGridView dataGridViewListFood;
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.Button buttonEdit;
+        public System.Windows.Forms.TextBox textBoxPriceTable;
     }
 }

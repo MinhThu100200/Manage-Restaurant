@@ -185,6 +185,7 @@ namespace ManageRes
             this.buttonRemoveFood.TabIndex = 12;
             this.buttonRemoveFood.Text = "Remove";
             this.buttonRemoveFood.UseVisualStyleBackColor = false;
+            this.buttonRemoveFood.Click += new System.EventHandler(this.buttonRemoveFood_Click);
             // 
             // dataGridViewListFood
             // 

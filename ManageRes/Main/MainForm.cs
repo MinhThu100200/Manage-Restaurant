@@ -112,7 +112,7 @@ namespace ManageRes
 
         private void buttonXoaHang_Click(object sender, EventArgs e)
         {
-
+            openchildForm(new ReportForm());
         }
 
         private void buttonDSMon_Click(object sender, EventArgs e)
@@ -179,6 +179,11 @@ namespace ManageRes
         private void buttonListBill_Click(object sender, EventArgs e)
         {
             openchildForm(new ListBillForm());
+        }
+
+        private void buttonCheckIn_Click(object sender, EventArgs e)
+        {
+            openchildForm(new CheckStaff());
         }
     }
 }

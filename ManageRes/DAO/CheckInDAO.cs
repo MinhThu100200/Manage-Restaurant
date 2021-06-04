@@ -52,6 +52,13 @@ namespace ManageRes
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        //public DataTable GetAllCheckInToday()
+        //{
+        //    string date = DateTime.Now.Date.ToString();
+        //    string query = "SELECT * FROM CheckIn where ThoiGianVao ";
+        //    return DataProvider.Instance.ExecuteQuery(query);
+        //}
+
         public DataTable GetCheckInByID(int id)
         {
             string query = "SELECT * FROM CheckIn where id = @id ";
@@ -60,7 +67,7 @@ namespace ManageRes
 
         public DataTable GetCheckInByIdNV(int idnv, DateTime ngay)
         {
-            string query = "SELECT * FROM CheckIn where IdNhanVien = @idnhanvien and Ngay = @ngay";
+            string query = "SELECT * FROM CheckIn where IdNhanVien = @idnhanvien and ThoiGianVao = @ngay";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { idnv, ngay });
         }
 

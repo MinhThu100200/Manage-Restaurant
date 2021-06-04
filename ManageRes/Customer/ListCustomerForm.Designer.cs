@@ -183,6 +183,7 @@ namespace ManageRes
             this.buttonSearchFood.TabIndex = 2;
             this.buttonSearchFood.Text = "Search";
             this.buttonSearchFood.UseVisualStyleBackColor = false;
+            this.buttonSearchFood.Click += new System.EventHandler(this.buttonSearchFood_Click);
             // 
             // textBoxSearch
             // 

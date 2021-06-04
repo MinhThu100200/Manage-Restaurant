@@ -30,9 +30,19 @@ namespace ManageRes
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainForm frm = new MainForm();
-            frm.ShowDialog();
+            if(Globals.Users.Role == 1)
+            {
+                this.Hide();
+                MainForm frm = new MainForm();
+                frm.ShowDialog();
+            }    
+            else
+            {
+                this.Hide();
+                CheckStaff frm = new CheckStaff();
+                frm.ShowDialog();
+            }    
+            
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
@@ -58,9 +68,18 @@ namespace ManageRes
                     if (UserInfoDAO.Instance.InsertUserInfo(idnhanvien, fullname, address, birthday, pic))
                     {
                         MessageBox.Show("Success!!!", "Update Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Hide();
-                        MainForm frm = new MainForm();
-                        frm.ShowDialog();
+                        if (Globals.Users.Role == 1)
+                        {
+                            this.Hide();
+                            MainForm frm = new MainForm();
+                            frm.ShowDialog();
+                        }
+                        else
+                        {
+                            this.Hide();
+                            CheckStaff frm = new CheckStaff();
+                            frm.ShowDialog();
+                        }
                     }
                     else
                     {

@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -47,10 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BillDAO.cs" />
-    <Compile Include="BillDetailDAO.cs" />
-    <Compile Include="CheckInDAO.cs" />
-    <Compile Include="CheckOutDAO.cs" />
+    <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\BillDetailDAO.cs" />
+    <Compile Include="DAO\CheckInDAO.cs" />
+    <Compile Include="DAO\CheckOutDAO.cs" />
     <Compile Include="CheckStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +94,24 @@
       <DependentUpon>ManageEmployeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\SalaryDAO.cs" />
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalaryForm.Designer.cs">
+      <DependentUpon>SalaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schedule.Designer.cs">
+      <DependentUpon>Schedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Table\CRUDTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +195,9 @@
     <Compile Include="WareHouseForm.Designer.cs">
       <DependentUpon>WareHouseForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CheckStaff.resx">
+      <DependentUpon>CheckStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\ListCustomerForm.resx">
       <DependentUpon>ListCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +212,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseFood.resx">
       <DependentUpon>ChooseFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalaryForm.resx">
+      <DependentUpon>SalaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schedule.resx">
+      <DependentUpon>Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Table\CRUDTableForm.resx">
       <DependentUpon>CRUDTableForm.cs</DependentUpon>

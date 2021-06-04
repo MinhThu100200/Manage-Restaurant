@@ -42,6 +42,12 @@ namespace ManageRes
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        public DataTable GetUserInfoByRole(int role)
+        {
+            string query = "SELECT ct.HoTen, ct.NgaySinh, nv.Sdt FROM ThongTinChiTiet as ct, NhanVien as nv where ct.IdNhanVien = nv.Id and nv.VaiTro = @role";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { role });
+        }
+
         public DataTable GetUserInfoByID(int id)
         {
             string query = "SELECT * FROM ThongTinChiTiet where id = @id ";

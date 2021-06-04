@@ -21,6 +21,7 @@ namespace ManageRes
         {
             //DataTable dt = BillDAO.Instance.GetAllBill();
             DataTable total = BillDetailDAO.Instance.GetTotalBillDetailByID(GlobalsTable.tables.Id);
+            DataTable priceTable = TypeTableDAO.Instance.GetTypeByID(GlobalsTable.tables.Loai);
             //int n = dt.Rows.Count - 1;
             if(textBoxNameCustomer.Text.Trim() != "" && textBoxIdCard.Text.Trim() != "")
             {
@@ -33,7 +34,7 @@ namespace ManageRes
                     if(CustomerDAO.Instance.InsertCustomer(name, idcard))
                     {
                         DataTable cus = CustomerDAO.Instance.GetCustomerByCmnd(idcard);
-                        if (BillDAO.Instance.InsertBill(Globals.Users.Id, Convert.ToDouble(total.Rows[0][0].ToString()), DateTime.Now, Convert.ToInt32(cus.Rows[0][0].ToString())))
+                        if (BillDAO.Instance.InsertBill(Globals.Users.Id, Convert.ToDouble(total.Rows[0][0].ToString()) + Convert.ToDouble(priceTable.Rows[0][2].ToString()) , DateTime.Now, Convert.ToInt32(cus.Rows[0][0].ToString())))
                         {
                             MessageBox.Show("Success!!!", "Payment with new customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();

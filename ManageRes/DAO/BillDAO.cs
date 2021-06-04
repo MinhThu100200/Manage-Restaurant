@@ -54,6 +54,20 @@ namespace ManageRes
             return DataProvider.Instance.ExecuteQuery(query, new object[] { id });
         }
 
+        public DataTable GetBillByToday()
+        {
+            string date = DateTime.Now.Date.ToString();
+            string query = "SELECT * FROM HoaDon where Ngay = @date ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { date });
+        }
+
+        public DataTable GetBillByBetween(string datefrom, string dateto)
+        {
+            //string date = DateTime.Now.Date.ToString();
+            string query = "SELECT * FROM HoaDon where Ngay between @datefrom and @dateto ";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { datefrom, dateto });
+        }
+
         public DataTable GetBillByUserID(int id)
         {
             string query = "SELECT * FROM HoaDon where idnhanvien = @id ";

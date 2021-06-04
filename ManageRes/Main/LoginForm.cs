@@ -88,9 +88,19 @@ namespace ManageRes
         {
             if (UserInfoDAO.Instance.GetUserInfoByIDUser(id).Rows.Count > 0)
             {
-                this.Hide();
-                MainForm frm = new MainForm();
-                frm.ShowDialog();
+                if(Globals.Users.Role == 1)
+                {
+                    this.Hide();
+                    MainForm frm = new MainForm();
+                    frm.ShowDialog();
+                }    
+                else
+                {
+                    this.Hide();
+                    CheckStaff frm = new CheckStaff();
+                    frm.ShowDialog();
+                }    
+                
             }
             else
             {

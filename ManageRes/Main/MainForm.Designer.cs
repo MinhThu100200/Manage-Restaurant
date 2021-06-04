@@ -146,6 +146,7 @@ namespace ManageRes
             this.buttonCheckIn.TabIndex = 6;
             this.buttonCheckIn.Text = "Chấm Công";
             this.buttonCheckIn.UseVisualStyleBackColor = false;
+            this.buttonCheckIn.Click += new System.EventHandler(this.buttonCheckIn_Click);
             // 
             // buttonSetting
             // 

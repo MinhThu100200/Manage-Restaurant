@@ -25,7 +25,16 @@ namespace ManageRes
             DataTable dt = TypeTableDAO.Instance.GetTypeByID(GlobalsTable.tables.Loai);
             if (GlobalsTable.tables.TinhTrang == 1)
             {
-                dataGridViewListFood.DataSource = BillDetailDAO.Instance.GetBillDetailToPayment(GlobalsTable.tables.Id);
+                DataTable total = BillDetailDAO.Instance.GetBillDetailToPayment(GlobalsTable.tables.Id);
+                dataGridViewListFood.DataSource = total;
+                double food = 0;
+                for (int a = 0; a < total.Rows.Count; a++)
+                {
+                    food = food + Convert.ToInt32(total.Rows[a][3].ToString()) * Convert.ToDouble(total.Rows[a][4]);
+                }
+                double amountMoney = food + Convert.ToDouble(dt.Rows[0][2].ToString());
+                labelAmountMoney.Text = "Amount: " + amountMoney.ToString();
+                labelFood.Text = "Food: " + food.ToString();
             }    
             else
             {
@@ -34,8 +43,7 @@ namespace ManageRes
                 newTable.Columns.Add("So Luong", typeof(System.Int32));
                 newTable.Columns.Add("Gia", typeof(System.Double));
             }    
-            //price table
-           
+            //price table           
             textBoxPriceTable.Text = dt.Rows[0][2].ToString();
 
             //combobox
@@ -129,8 +137,16 @@ namespace ManageRes
                         newTable.Rows.Add(id, name, amount, price);
                     }
                     dataGridViewListFood.DataSource = newTable;
-                }    
-               
+                }
+                double food = 0;
+                for (int a = 0; a < newTable.Rows.Count; a++)
+                {
+                    food = food + Convert.ToInt32(newTable.Rows[a][2].ToString()) * Convert.ToDouble(newTable.Rows[a][3]);
+                }
+                double amountMoney = food + Convert.ToDouble(textBoxPriceTable.Text.Trim());
+                labelAmountMoney.Text = "Amount: " + amountMoney.ToString();
+                labelFood.Text = "Food: " + food.ToString();
+
             }
             else
             {
@@ -238,7 +254,14 @@ namespace ManageRes
             {
                 MessageBox.Show("Amount >= 1", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
+            double food = 0;
+            for (int a = 0; a < newTable.Rows.Count; a++)
+            {
+                food = food + Convert.ToInt32(newTable.Rows[a][2].ToString()) * Convert.ToDouble(newTable.Rows[a][3]);
+            }
+            double amountMoney = food + Convert.ToInt32(textBoxPriceTable.Text.Trim());
+            labelAmountMoney.Text = "Amount: " + amountMoney;
+            labelFood.Text = "Food: " + food;
         }
 
         private void buttonRemove_Click(object sender, EventArgs e)
@@ -251,6 +274,14 @@ namespace ManageRes
                 }    
             }
             dataGridViewListFood.DataSource = newTable;
+            double food = 0;
+            for (int a = 0; a < newTable.Rows.Count; a++)
+            {
+                food = food + Convert.ToInt32(newTable.Rows[a][2].ToString()) * Convert.ToDouble(newTable.Rows[a][3]);
+            }
+            double amountMoney = food + Convert.ToInt32(textBoxPriceTable.Text.Trim());
+            labelAmountMoney.Text = "Amount: " + amountMoney;
+            labelFood.Text = "Food: " + food;
         }
 
         private void buttonOrder_Click(object sender, EventArgs e)
@@ -259,8 +290,9 @@ namespace ManageRes
             DataTable dt = WarehouseDAO.Instance.GetAllWarehouse();
             for (int i = 0; i < dataGridViewListFood.Rows.Count; i++)
             {
+                DateTime date = DateTime.Now.Date;
                 if(BillDetailDAO.Instance.InsertBillDetail(Convert.ToInt32(newTable.Rows[i][0].ToString()), Convert.ToInt32(newTable.Rows[i][2].ToString()), 
-                    Convert.ToDouble(newTable.Rows[i][3].ToString()), GlobalsTable.tables.Id))
+                    Convert.ToDouble(newTable.Rows[i][3].ToString()), GlobalsTable.tables.Id, date))
                 {
                     
                     dem++;

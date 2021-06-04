@@ -64,10 +64,10 @@ namespace ManageRes
             return DataProvider.Instance.ExecuteQuery(query, new object[] { cmnd });
         }
 
-        public bool UpdateCustomerByID(int id, string ten, int idHoaDon, string cmnd)
+        public bool UpdateCustomerByID(int id, string ten, string cmnd)
         {
-            string query = "UPDATE KhachHang SET Ten = @ten , IdHoaDon = @idhoadon , Cmnd = @cmnd WHERE Id = @id ";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten, idHoaDon, cmnd , id }) > 0;
+            string query = "UPDATE KhachHang SET Ten = @ten , Cmnd = @cmnd WHERE Id = @id ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten, cmnd , id }) > 0;
         }
 
         public List<Customer> GetAllCustomerList()

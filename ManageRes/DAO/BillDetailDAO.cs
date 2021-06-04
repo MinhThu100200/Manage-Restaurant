@@ -22,11 +22,11 @@ namespace ManageRes
 
         }
 
-        public bool InsertBillDetail(int idmon, int soluong, double gia, int idban)
+        public bool InsertBillDetail(int idmon, int soluong, double gia, int idban, DateTime ngay)
         {
-            string query = "INSERT INTO HoaDonChiTiet( IdMon , SoLuong, Gia, IdBan)"
-                + " VALUES  ( @idmon , @soluong , @gia , @idban )";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { idmon, soluong, gia, idban }) > 0;
+            string query = "INSERT INTO HoaDonChiTiet( IdMon , SoLuong, Gia, IdBan, Ngay)"
+                + " VALUES  ( @idmon , @soluong , @gia , @idban , @ngay )";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { idmon, soluong, gia, idban, ngay }) > 0;
         }
 
         public bool DeleteBillDetailByID(int id)
@@ -68,6 +68,24 @@ namespace ManageRes
         {
             string query = "UPDATE ThongTinChiTiet SET IdHoaDon = @idhoadon WHERE IdBan = @idban and IdHoaDon is null ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { idhoadon, idban}) > 0;
+        }
+
+        public DataTable GetTotalFoodOrder()
+        {
+            string query = "select hd.IdMon as 'Id Mon', m.ten, sum(hd.SoLuong) as 'So Luong' from HoaDonChiTiet as hd, Mon as m where hd.IdMon = m.Id group by hd.IdMon, m.Ten";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] {});
+        }
+        public DataTable GetTotalFoodOrderToday()
+        {
+            string date = DateTime.Today.Date.ToString();
+            string query = "select hd.IdMon as 'Id Mon', m.ten, sum(hd.SoLuong) as 'So Luong' from HoaDonChiTiet as hd, Mon as m where hd.IdMon = m.Id and hd.Ngay = @date group by hd.IdMon, m.ten";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { date });
+        }
+        public DataTable GetTotalFoodOrderBetween(string datefrom, string dateto)
+        {
+            string date = DateTime.Today.Date.ToString();
+            string query = "select hd.IdMon as 'Id Mon', m.ten, sum(hd.SoLuong) as 'So Luong' from HoaDonChiTiet as hd, Mon as m where hd.IdMon = m.Id and hd.Ngay between @datefrom and @dateto group by hd.IdMon, m.ten";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { datefrom, dateto });
         }
 
     }

@@ -16,5 +16,30 @@ namespace ManageRes
         {
             InitializeComponent();
         }
+
+        private void ListBillForm_Load(object sender, EventArgs e)
+        {
+            dataGridViewListBill.ReadOnly = true;
+            dataGridViewListBill.AllowUserToAddRows = false;
+            dataGridViewListBill.RowTemplate.Height = 80;
+            dataGridViewListBill.DataSource = BillDAO.Instance.GetBillByToday();
+
+        }
+
+        private void dateTimePickerForm_ValueChanged(object sender, EventArgs e)
+        {
+            string datefrom = dateTimePickerForm.Value.ToString();
+            string dateto = dateTimePickerTo.Value.ToString();
+
+            dataGridViewListBill.DataSource = BillDAO.Instance.GetBillByBetween(datefrom, dateto);
+        }
+
+        private void dateTimePickerTo_ValueChanged(object sender, EventArgs e)
+        {
+            string datefrom = dateTimePickerForm.Value.ToString();
+            string dateto = dateTimePickerTo.Value.ToString();
+
+            dataGridViewListBill.DataSource = BillDAO.Instance.GetBillByBetween(datefrom, dateto);
+        }
     }
 }

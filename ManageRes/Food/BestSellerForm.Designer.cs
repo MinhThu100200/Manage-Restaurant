@@ -29,63 +29,101 @@ namespace ManageRes
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridViewBestSeller = new System.Windows.Forms.DataGridView();
-            this.chartBestSeller = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxTime = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.buttonPrint = new System.Windows.Forms.Button();
+            this.buttontoFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBestSeller)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartBestSeller)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewBestSeller
             // 
             this.dataGridViewBestSeller.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBestSeller.Location = new System.Drawing.Point(12, 110);
+            this.dataGridViewBestSeller.Location = new System.Drawing.Point(36, 105);
             this.dataGridViewBestSeller.Name = "dataGridViewBestSeller";
             this.dataGridViewBestSeller.RowHeadersWidth = 51;
             this.dataGridViewBestSeller.RowTemplate.Height = 24;
-            this.dataGridViewBestSeller.Size = new System.Drawing.Size(525, 419);
+            this.dataGridViewBestSeller.Size = new System.Drawing.Size(749, 419);
             this.dataGridViewBestSeller.TabIndex = 0;
-            // 
-            // chartBestSeller
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chartBestSeller.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartBestSeller.Legends.Add(legend2);
-            this.chartBestSeller.Location = new System.Drawing.Point(543, 110);
-            this.chartBestSeller.Name = "chartBestSeller";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartBestSeller.Series.Add(series2);
-            this.chartBestSeller.Size = new System.Drawing.Size(503, 419);
-            this.chartBestSeller.TabIndex = 1;
-            this.chartBestSeller.Text = "chartBestSeller";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(440, 23);
+            this.label1.Location = new System.Drawing.Point(251, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(193, 39);
             this.label1.TabIndex = 14;
             this.label1.Text = "Best Seller";
             // 
-            // comboBoxTime
+            // dateTimePickerFrom
             // 
-            this.comboBoxTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxTime.FormattingEnabled = true;
-            this.comboBoxTime.Location = new System.Drawing.Point(12, 76);
-            this.comboBoxTime.Name = "comboBoxTime";
-            this.comboBoxTime.Size = new System.Drawing.Size(170, 28);
-            this.comboBoxTime.TabIndex = 15;
-            this.comboBoxTime.SelectedIndexChanged += new System.EventHandler(this.comboBoxTime_SelectedIndexChanged);
+            this.dateTimePickerFrom.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(86, 73);
+            this.dateTimePickerFrom.Name = "dateTimePickerFrom";
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(304, 26);
+            this.dateTimePickerFrom.TabIndex = 15;
+            this.dateTimePickerFrom.ValueChanged += new System.EventHandler(this.dateTimePickerFrom_ValueChanged);
+            // 
+            // dateTimePickerTo
+            // 
+            this.dateTimePickerTo.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerTo.Location = new System.Drawing.Point(610, 73);
+            this.dateTimePickerTo.Name = "dateTimePickerTo";
+            this.dateTimePickerTo.Size = new System.Drawing.Size(303, 26);
+            this.dateTimePickerTo.TabIndex = 16;
+            this.dateTimePickerTo.ValueChanged += new System.EventHandler(this.dateTimePickerTo_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(32, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 20);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "From:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(572, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 20);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "To:";
+            // 
+            // buttonPrint
+            // 
+            this.buttonPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.buttonPrint.Location = new System.Drawing.Point(879, 199);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(116, 47);
+            this.buttonPrint.TabIndex = 19;
+            this.buttonPrint.Text = "Print";
+            this.buttonPrint.UseVisualStyleBackColor = false;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
+            // 
+            // buttontoFile
+            // 
+            this.buttontoFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttontoFile.Location = new System.Drawing.Point(879, 118);
+            this.buttontoFile.Name = "buttontoFile";
+            this.buttontoFile.Size = new System.Drawing.Size(116, 45);
+            this.buttontoFile.TabIndex = 20;
+            this.buttontoFile.Text = "ToFile";
+            this.buttontoFile.UseVisualStyleBackColor = false;
+            this.buttontoFile.Click += new System.EventHandler(this.buttontoFile_Click);
             // 
             // BestSellerForm
             // 
@@ -93,16 +131,19 @@ namespace ManageRes
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(1058, 541);
-            this.Controls.Add(this.comboBoxTime);
+            this.Controls.Add(this.buttontoFile);
+            this.Controls.Add(this.buttonPrint);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dateTimePickerTo);
+            this.Controls.Add(this.dateTimePickerFrom);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.chartBestSeller);
             this.Controls.Add(this.dataGridViewBestSeller);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BestSellerForm";
             this.Text = "BestSellerForm";
             this.Load += new System.EventHandler(this.BestSellerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBestSeller)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartBestSeller)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,8 +152,12 @@ namespace ManageRes
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewBestSeller;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartBestSeller;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxTime;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
+        private System.Windows.Forms.DateTimePicker dateTimePickerTo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonPrint;
+        private System.Windows.Forms.Button buttontoFile;
     }
 }
